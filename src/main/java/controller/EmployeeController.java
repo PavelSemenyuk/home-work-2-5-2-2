@@ -1,7 +1,8 @@
 package controller;
 
 
-import employee.Employee;
+import object.Department;
+import object.Employee;
 import exeption.EmployeeAlreadyAddedException;
 import exeption.EmployeeNotFoundException;
 import exeption.EmployeeStorageIsFullException;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import service.EmployeeService;
 
 import java.util.Collection;
-import java.util.List;
 
 
 @RestController
@@ -49,22 +49,32 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/add")
-    public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName) {
-        return employeeService.add(firstName, lastName);
+    public Employee addEmployee(@RequestParam(name = "firstName") String firstName,
+                                @RequestParam(name = "lastName") String lastName,
+                                @RequestParam(name = "salary") String salary,
+                                @RequestParam(name = "departmentId") int departmentId)
+    {
+        return employeeService.add(firstName, lastName, salary, departmentId);
     }
 
     @GetMapping(path = "/find")
-    public Employee findEmployee(@RequestParam String firstName, @RequestParam String lastName) {
-        return employeeService.find(firstName, lastName);
+    public Employee findEmployee(@RequestParam String firstName,
+                                 @RequestParam String lastName,
+                                 @RequestParam String salary,
+                                 @RequestParam Department department)
+    {
+        return employeeService.find(firstName, lastName,salary,department);
     }
 
     @GetMapping(path = "/remove")
-    public Employee removeEmployee(@RequestParam String firstName, @RequestParam String lastName) {
-        return employeeService.remove(firstName, lastName);
+    public Employee removeEmployee(@RequestParam String firstName,
+                                   @RequestParam String lastName,
+                                   @RequestParam String salary,
+                                   @RequestParam Department department) {
+        return employeeService.remove(firstName, lastName,salary,department);
     }
 
     @GetMapping(path = "/findAll")
-
     public Collection<Employee> getEmployees() {
         return employeeService.getAll();
     }
