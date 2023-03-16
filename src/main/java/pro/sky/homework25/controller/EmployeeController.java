@@ -1,6 +1,7 @@
 package pro.sky.homework25.controller;
 
 
+import pro.sky.homework25.exeption.EmployeeWrongTextEntryException;
 import pro.sky.homework25.object.Department;
 import pro.sky.homework25.object.Employee;
 import pro.sky.homework25.exeption.EmployeeAlreadyAddedException;
@@ -28,7 +29,11 @@ public class EmployeeController {
     public String handleException(EmployeeStorageIsFullException e) {
         return String.format("%s %s", HttpStatus.BAD_REQUEST.value(), e.getMessage());
     }
-
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(EmployeeWrongTextEntryException.class)
+    public String handleException(EmployeeWrongTextEntryException e) {
+        return String.format("%s %s", HttpStatus.BAD_REQUEST.value(), e.getMessage());
+    }
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(EmployeeAlreadyAddedException.class)
     public String handleException(EmployeeAlreadyAddedException e) {
