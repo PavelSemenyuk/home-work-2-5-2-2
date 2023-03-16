@@ -1,11 +1,11 @@
-package service;
+package pro.sky.homework25.service;
 
-import object.Department;
-import object.Employee;
-import static object.Department.DEPARTMENT_BY_ID;
-import exeption.EmployeeAlreadyAddedException;
-import exeption.EmployeeNotFoundException;
-import exeption.EmployeeStorageIsFullException;
+import pro.sky.homework25.object.Department;
+import pro.sky.homework25.object.Employee;
+import static pro.sky.homework25.object.Department.DEPARTMENT_BY_ID;
+import pro.sky.homework25.exeption.EmployeeAlreadyAddedException;
+import pro.sky.homework25.exeption.EmployeeNotFoundException;
+import pro.sky.homework25.exeption.EmployeeStorageIsFullException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

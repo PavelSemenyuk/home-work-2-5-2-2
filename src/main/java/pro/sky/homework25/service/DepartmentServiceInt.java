@@ -1,6 +1,6 @@
-package service;
+package pro.sky.homework25.service;
 
-import object.Employee;
+import pro.sky.homework25.object.Employee;
 
 import java.util.List;
 import java.util.Map;

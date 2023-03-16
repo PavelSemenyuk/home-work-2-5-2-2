@@ -1,21 +1,20 @@
-package controller;
+package pro.sky.homework25.controller;
 
-import object.Employee;
-import exeption.DepartmentSearchException;
+import pro.sky.homework25.object.Employee;
+import pro.sky.homework25.exeption.DepartmentSearchException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import service.DepartmentService;
+import pro.sky.homework25.service.DepartmentService;
 
 import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(path = "/Department")
+@RequestMapping(path = "/department")
 public class DepartmentController {
     private final DepartmentService departmentService;
 
-    @Autowired
     public DepartmentController(DepartmentService departmentService) {
         this.departmentService = departmentService;
     }

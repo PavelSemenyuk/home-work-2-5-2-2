@@ -1,11 +1,11 @@
-package controller;
+package pro.sky.homework25.controller;
 
 
-import object.Department;
-import object.Employee;
-import exeption.EmployeeAlreadyAddedException;
-import exeption.EmployeeNotFoundException;
-import exeption.EmployeeStorageIsFullException;
+import pro.sky.homework25.object.Department;
+import pro.sky.homework25.object.Employee;
+import pro.sky.homework25.exeption.EmployeeAlreadyAddedException;
+import pro.sky.homework25.exeption.EmployeeNotFoundException;
+import pro.sky.homework25.exeption.EmployeeStorageIsFullException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import service.EmployeeService;
+import pro.sky.homework25.service.EmployeeService;
 
 import java.util.Collection;
 

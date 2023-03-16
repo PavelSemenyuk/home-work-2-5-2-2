@@ -1,4 +1,4 @@
-package exeption;
+package pro.sky.homework25.exeption;
 
 public class EmployeeStorageIsFullException extends RuntimeException{
 

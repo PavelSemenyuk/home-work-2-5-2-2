@@ -1,4 +1,4 @@
-package object;
+package pro.sky.homework25.object;
 
 import java.util.Objects;
 

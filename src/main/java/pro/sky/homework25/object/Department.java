@@ -1,11 +1,12 @@
-package object;
+package pro.sky.homework25.object;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Department {
-    private Integer id;
-    private String name;
+    private final Integer id;
+    private final String name;
+
 
     public Department(Integer id, String name) {
         this.id = id;
@@ -13,10 +14,12 @@ public class Department {
     }
     public Integer getId() {
         return id;
+
     }
     public String getName() {
         return name;
     }
+
     @Override
     public String toString() {
         return "Department{" +
@@ -24,6 +27,7 @@ public class Department {
                 ", name='" + name + '\'' +
                 '}';
     }
+
     public static final Map<Integer, Department> DEPARTMENT_BY_ID ;
     static {
         DEPARTMENT_BY_ID = new HashMap<>();
