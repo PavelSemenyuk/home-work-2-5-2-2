@@ -22,10 +22,17 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final int MAX_EMPLOYEES_COUNT = 15;
     private static final List<Employee> employees = new ArrayList<>();
     
+<<<<<<< HEAD
 //    static {
 //        employees.add(new Employee("Ольга", "Иванова", 10700, DEPARTMENT_BY_ID.get(1)));
 //        employees.add(new Employee("Иван", "Олегов", 10200, DEPARTMENT_BY_ID.get(1)));
 //    }
+=======
+    static {
+        employees.add(new Employee("Ольга", "Иванова", 10700, DEPARTMENT_BY_ID.get(1)));
+        employees.add(new Employee("Иван", "Олегов", 10200, DEPARTMENT_BY_ID.get(1)));
+    }
+>>>>>>> github/HW_mockito
     @Override
     public Employee add(String firstName, String lastName, Integer salary, int departmentId) {
 
@@ -38,8 +45,13 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new EmployeeWrongTextEntryException("Написанно с маленькой буквы");
         }
 
+<<<<<<< HEAD
         if ((!StringUtils.isAlpha(firstName)) ||
                 (!StringUtils.isAlpha(lastName))) {
+=======
+        if ((StringUtils.isAlpha(firstName)) ||
+                (StringUtils.isAlpha(lastName))) {
+>>>>>>> github/HW_mockito
             throw new EmployeeWrongTextEntryException("В тексте есть цифра или пробел");
         }
 
@@ -54,7 +66,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee find(String firstName, String lastName, Integer salary, Department department) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> github/HW_mockito
         Employee employee = new Employee(firstName, lastName, salary, department);
         if (employees.contains(employee)){
             return employee;
@@ -66,7 +81,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee remove(String firstName, String lastName, Integer salary, Department department) {
         Employee employee = new Employee(firstName, lastName, salary, department);
         employees.remove(employee);
+<<<<<<< HEAD
 
+=======
+>>>>>>> github/HW_mockito
         throw new EmployeeNotFoundException("Такой сотрудник не найден");
     }
 
